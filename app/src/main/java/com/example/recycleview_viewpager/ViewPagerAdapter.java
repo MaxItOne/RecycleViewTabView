@@ -38,12 +38,12 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
         String title = "";
         switch (position){
             case 0:
-                title = "Like Fragment";
+                title = "Like";
                 break;
             case 1:
                 title = "User";
                 break;
         }
-        return super.getPageTitle(position);
+        return title;
     }
 }

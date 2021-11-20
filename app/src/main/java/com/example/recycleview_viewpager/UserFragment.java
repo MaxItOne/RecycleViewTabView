@@ -71,14 +71,16 @@ public class UserFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_user, container, false);
         rcvData = view.findViewById(R.id.rcv_Data);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager();
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         rcvData.setLayoutManager(linearLayoutManager);
 
-        RecyclerView.ItemDecoration itemDecoration = new DividerItemDecoration(,DividerItemDecoration.VERTICAL);
+        RecyclerView.ItemDecoration itemDecoration = new DividerItemDecoration(getContext(),DividerItemDecoration.VERTICAL);
         rcvData.addItemDecoration(itemDecoration);
 
-        userAdapter = new UserAdapter(this,getListUser());
+        userAdapter = new UserAdapter(getContext(),getListUser());
         rcvData.setAdapter(userAdapter);
+
+        return view;
     }
     private List<User> getListUser() {
         List<User> list = new ArrayList<>();
